@@ -45,7 +45,6 @@ handleDelete() {
   })
 }
 
-
   render() {
 
   return(
