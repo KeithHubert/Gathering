@@ -7,6 +7,8 @@ import AddressField from '../components/AddressField';
 import CityField from '../components/CityField';
 import ZipField from '../components/ZipField';
 import NumberOfPlayersField from '../components/NumberOfPlayersField';
+import GameShow from '../components/GameShow'
+
 
 class NewGameFormContainer extends Component {
   constructor(props) {
@@ -36,9 +38,6 @@ class NewGameFormContainer extends Component {
   this.handleZipChange=this.handleZipChange.bind(this);
   this.handleNumberOfPlayersChange=this.handleNumberOfPlayersChange.bind(this);
   this.addNewGame=this.addNewGame.bind(this);
-
-  // this.validateGameSelection = this.validateGameSelection.bind(this);
-
 }
 
 handleFormSubmit(event) {

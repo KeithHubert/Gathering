@@ -14,6 +14,7 @@ class Api::V1::GamesController < Api::V1::BaseController
     body = request.body.read
     parsed = JSON.parse(body)
     game = Game.new(parsed)
+    game.creator = current_user
 
     if game.save!
       render json: game
