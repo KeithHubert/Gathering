@@ -9,6 +9,7 @@ import ZipField from '../components/ZipField';
 import NumberOfPlayersField from '../components/NumberOfPlayersField';
 import GameShow from '../components/GameShow'
 
+
 class NewGameFormContainer extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,6 @@ class NewGameFormContainer extends Component {
 }
 
 handleFormSubmit(event) {
-  debugger;
   event.preventDefault();
   let formPayLoad = {
     title: this.state.title,
@@ -146,7 +146,7 @@ handleNumberOfPlayersChange(event) {
         />
         <TimeField
           content={this.state.time}
-          label="Time"w
+          label="Time"
           name="time"
           handlerFunction={this.handleTimeChange}
         />

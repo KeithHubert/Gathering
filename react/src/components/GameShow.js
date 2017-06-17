@@ -65,11 +65,6 @@ handleDelete() {
     </div>
 
     <div className='columns small-3 medium-3'>
-      <h6> Creator </h6>
-      <ul>{this.props.creator}</ul>
-    </div>
-
-    <div className='columns small-3 medium-3'>
       <h6> Format </h6>
       <ul>{this.props.gametype}</ul>
     </div>
