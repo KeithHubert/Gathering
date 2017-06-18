@@ -24,4 +24,6 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  get 'current_user' => "users#current_user"
+
 end

@@ -45,7 +45,6 @@ handleDelete() {
   })
 }
 
-
   render() {
 
   return(
@@ -63,11 +62,6 @@ handleDelete() {
     <div className='columns small-3 medium-3'>
       <h6> Title </h6>
       <ul>{this.props.title}</ul>
-    </div>
-
-    <div className='columns small-3 medium-3'>
-      <h6> Creator </h6>
-      <ul>{this.props.creator}</ul>
     </div>
 
     <div className='columns small-3 medium-3'>

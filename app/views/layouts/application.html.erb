@@ -7,7 +7,6 @@
     <%= javascript_include_tag 'application' %>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_JAVASCRIPT_KEY'] %>"></script>
     <script src="https://use.fontawesome.com/d7f90b4c23.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
   </head>
 
   <body>
@@ -47,7 +46,7 @@
           <% else %>
             <li><a href='/conversations'><i class="fa fa-comments" aria-hidden="true"></i></a></li>
          <% end %>
-
+         
         <% else %>
           <li> <%= link_to "Sign In", new_user_session_path %> </li>
           <li> <%= link_to "Sign Up", new_user_registration_path %> </li>

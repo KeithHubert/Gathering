@@ -8,7 +8,7 @@ import CityField from '../components/CityField';
 import ZipField from '../components/ZipField';
 import NumberOfPlayersField from '../components/NumberOfPlayersField';
 import GameShow from '../components/GameShow'
-import CreatorField from '../components/CreatorField'
+
 
 class NewGameFormContainer extends Component {
   constructor(props) {
@@ -24,7 +24,6 @@ class NewGameFormContainer extends Component {
       games: [],
       gameTypeOptions: ['Commander/EDH', 'Frontier', 'Legacy', 'Modern', 'Pauper', 'Standard'],
       gametype: '',
-      creator: '',
     };
 
   this.handleFormSubmit=this.handleFormSubmit.bind(this);
@@ -39,12 +38,9 @@ class NewGameFormContainer extends Component {
   this.handleZipChange=this.handleZipChange.bind(this);
   this.handleNumberOfPlayersChange=this.handleNumberOfPlayersChange.bind(this);
   this.addNewGame=this.addNewGame.bind(this);
-  this.handleCreatorChange=this.handleCreatorChange.bind(this);
-
 }
 
 handleFormSubmit(event) {
-  debugger;
   event.preventDefault();
   let formPayLoad = {
     title: this.state.title,
@@ -55,7 +51,6 @@ handleFormSubmit(event) {
     zip: this.state.zip,
     number_of_players: this.state.number_of_players,
     gametype: this.state.gametype,
-    creator: this.state.creator,
   };
   this.addNewGame(formPayLoad);
   this.handleFormClear(event);
@@ -75,21 +70,6 @@ handleFormClear(event) {
     city: '',
     zip: '',
     number_of_players: '',
-    creator: '',
-  });
-}
-
-componentDidMount() {
-  this.getUserData()
-}
-
-getUserData() {
-  fetch(`/api/v1/users`, {credentials: 'same-origin'})
-  .then(response => response.json())
-  .then(responseData => {
-    this.setState({
-      creator: responseData.current_user
-    });
   });
 }
 
@@ -110,11 +90,6 @@ fetch('/api/v1/games', {
 handleTitleChange(event) {
   event.preventDefault();
   this.setState({ title: event.target.value })
-}
-
-handleCreatorChange(event) {
-  event.preventDefault();
-  this.setState({ creator: this.targe.value})
 }
 
 handleGameTypeChange(event) {
@@ -171,7 +146,7 @@ handleNumberOfPlayersChange(event) {
         />
         <TimeField
           content={this.state.time}
-          label="Time"w
+          label="Time"
           name="time"
           handlerFunction={this.handleTimeChange}
         />
@@ -205,13 +180,6 @@ handleNumberOfPlayersChange(event) {
           name="number_of_players"
           handlerFunction={this.handleNumberOfPlayersChange}
         />
-
-        <CreatorField
-          content={this.props.creator}
-          label="Creator"
-          name="creator"
-          handlerFunction={this.handleCreatorChange}
-          />
 
         <div className="button-group">
           <input className="button" type="submit" value="Submit" onClick={this.handleFormSubmit}/>

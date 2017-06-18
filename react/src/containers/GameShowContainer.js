@@ -102,6 +102,8 @@ class GameShowContainer extends React.Component {
       )
     })
 
+
+
       return (
         <div>
           <div className='row'>
@@ -123,6 +125,7 @@ class GameShowContainer extends React.Component {
                 handlerFunction = {this.handleCommentChange}
                 handleFormClear = {this.handleFormClear}
                 comment_content = {this.state.comment}
+                creator = {this.state.game.creator}
               />
             </div>
 
